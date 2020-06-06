@@ -114,6 +114,7 @@ class GroundTruth(object):
             x = np.arange(0, size, 1, np.float32)
             y = x[:, np.newaxis]   # shape : (size, 1)
             x0 = y0 = size // 2
+            # local guasss heatmap
             g = np.exp(- ((x - x0) ** 2 + (y - y0) ** 2) / (2 * self.sigma ** 2))
             g_x = max(0, -upper_left[0]), min(bottom_right[0], self.heatmap_size[1]) - upper_left[0]
             g_y = max(0, -upper_left[1]), min(bottom_right[1], self.heatmap_size[0]) - upper_left[1]

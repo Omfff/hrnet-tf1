@@ -42,6 +42,7 @@ def stage4(input, name='stage4', is_training=True):
     with tf.variable_scope(name):
         sub_networks = exchange_between_stage(input, input_branch_num = 3, out_branch_num = 4, name=name, is_training=is_training)
         sub_networks = exchange_block(sub_networks, name='exchange_block1', is_training=is_training)
+        sub_networks= exchange_between_stage(sub_networks, input_branch_num = 4, out_branch_num = 4, name='exchane_final_stage', is_training=is_training)
         # sub_networks = exchange_block(sub_networks, name='exchange_block2', is_training=is_training)
         # sub_networks = exchange_block(sub_networks, name='exchange_block3', is_training=is_training)
     return sub_networks

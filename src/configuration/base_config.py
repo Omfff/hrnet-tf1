@@ -1,6 +1,6 @@
 class Config(object):
     # train
-    BATCH_SIZE = 256
+    BATCH_SIZE = 32
     LEARNING_RATE = 0.001
     EPOCHS = 50
     # LOAD_WEIGHTS_BEFORE_TRAINING = False
